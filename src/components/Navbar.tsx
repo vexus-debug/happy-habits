@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
@@ -15,10 +15,20 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setIsOpen(false);
+  }, []);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 flex items-center justify-between h-20">
-        <a href="#home" className="flex items-center gap-3">
+        <a href="#home" onClick={(e) => scrollToSection(e, "#home")} className="flex items-center gap-3">
           <img src={logo} alt="Smile 365 Star Dental Clinic" className="h-14 w-14 object-contain" />
           <div className="hidden sm:block">
             <span className="font-display text-lg font-bold text-primary">Smile 365 Star</span>
@@ -31,6 +41,7 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
+              onClick={(e) => scrollToSection(e, link.href)}
               className="text-sm font-medium font-body text-foreground hover:text-primary transition-colors"
             >
               {link.label}
@@ -44,7 +55,7 @@ const Navbar = () => {
             +234 816 525 7737
           </a>
           <Button asChild>
-            <a href="#contact">Book Appointment</a>
+            <a href="#contact" onClick={(e) => scrollToSection(e, "#contact")}>Book Appointment</a>
           </Button>
         </div>
 
@@ -59,14 +70,14 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => scrollToSection(e, link.href)}
               className="block py-2 text-sm font-body text-foreground hover:text-primary"
             >
               {link.label}
             </a>
           ))}
           <Button asChild className="w-full mt-3">
-            <a href="#contact" onClick={() => setIsOpen(false)}>Book Appointment</a>
+            <a href="#contact" onClick={(e) => scrollToSection(e, "#contact")}>Book Appointment</a>
           </Button>
         </div>
       )}
