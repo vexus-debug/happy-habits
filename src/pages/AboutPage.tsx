@@ -71,7 +71,7 @@ const AboutPage = () => {
             <motion.div {...fadeUp}>
               <div className="relative">
                 <img
-                  src={clinicImg}
+                  src={clinicEntrance}
                   alt="Inside Smile 365 Star Dental Clinic"
                   className="rounded-2xl w-full h-[350px] md:h-[480px] object-cover"
                 />
