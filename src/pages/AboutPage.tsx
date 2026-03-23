@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
-import clinicImg from "@/assets/clinic-interior.jpg";
-import dentistImg from "@/assets/dentist-team.jpg";
 import waitingArea from "@/assets/gallery/waiting-area.jpg";
 import treatmentRoom from "@/assets/gallery/treatment-room.jpg";
 import dentalTeam from "@/assets/gallery/dental-team.jpg";
 import dentistAtWork from "@/assets/gallery/dentist-at-work.jpg";
+import clinicEntrance from "@/assets/gallery/clinic-entrance.jpg";
+import receptionDesk from "@/assets/gallery/reception-desk.jpg";
+import loungeArea from "@/assets/gallery/lounge-area.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
