@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, Instagram, MapPin, Clock, Mail, Send } from "lucide-react";
+import { Phone, MessageCircle, Instagram, Facebook, MapPin, Clock, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -38,11 +38,12 @@ const contactMethods = [
     ],
   },
   {
-    icon: Instagram,
+    icon: Facebook,
     title: "Social Media",
     desc: "Follow us for updates",
     items: [
-      { label: "Instagram", value: "@smile365star", href: "https://instagram.com/smile365star" },
+      { label: "Facebook", value: "Smile 365 Star", href: "https://www.facebook.com/smile365star" },
+      { label: "Instagram", value: "@smile365star", href: "https://www.instagram.com/smile365star" },
     ],
   },
 ];
