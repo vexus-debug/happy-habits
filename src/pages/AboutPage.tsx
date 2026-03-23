@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
-import clinicImg from "@/assets/clinic-interior.jpg";
-import dentistImg from "@/assets/dentist-team.jpg";
 import waitingArea from "@/assets/gallery/waiting-area.jpg";
 import treatmentRoom from "@/assets/gallery/treatment-room.jpg";
 import dentalTeam from "@/assets/gallery/dental-team.jpg";
 import dentistAtWork from "@/assets/gallery/dentist-at-work.jpg";
+import clinicEntrance from "@/assets/gallery/clinic-entrance.jpg";
+import receptionDesk from "@/assets/gallery/reception-desk.jpg";
+import loungeArea from "@/assets/gallery/lounge-area.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -70,7 +71,7 @@ const AboutPage = () => {
             <motion.div {...fadeUp}>
               <div className="relative">
                 <img
-                  src={clinicImg}
+                  src={clinicEntrance}
                   alt="Inside Smile 365 Star Dental Clinic"
                   className="rounded-2xl w-full h-[350px] md:h-[480px] object-cover"
                 />
@@ -189,7 +190,7 @@ const AboutPage = () => {
                   <img src={dentalTeam} alt="Smile 365 Star dental team" className="rounded-2xl w-full h-72 md:h-96 object-cover" />
                 </div>
                 <div className="col-span-2 flex flex-col gap-3">
-                  <img src={dentistImg} alt="Our dentists" className="rounded-2xl w-full h-[calc(50%-0.375rem)] object-cover" />
+                  <img src={receptionDesk} alt="Our dentists" className="rounded-2xl w-full h-[calc(50%-0.375rem)] object-cover" />
                   <img src={dentistAtWork} alt="Specialist performing a procedure" className="rounded-2xl w-full h-[calc(50%-0.375rem)] object-cover" />
                 </div>
               </div>
@@ -216,7 +217,7 @@ const AboutPage = () => {
           >
             <img src={waitingArea} alt="Our waiting area" className="rounded-xl w-full h-48 md:h-64 object-cover col-span-2 md:col-span-1" />
             <img src={treatmentRoom} alt="Treatment room" className="rounded-xl w-full h-48 md:h-64 object-cover" />
-            <img src={clinicImg} alt="Clinic interior" className="rounded-xl w-full h-48 md:h-64 object-cover" />
+            <img src={loungeArea} alt="Clinic interior" className="rounded-xl w-full h-48 md:h-64 object-cover" />
           </motion.div>
         </div>
       </section>
